@@ -8,7 +8,7 @@ Summary:        A music player and library organizer
 Group:          Applications/Multimedia
 License:        GPLv3+ and GPLv2+
 URL:            https://github.com/clementine-player/Clementine
-Source0:        https://github.com/clementine-player/Clementine/archive/master.tar.gz
+Source0:        clementine-%{version}.tar.gz
 
 BuildRequires:  boost-devel
 BuildRequires:  cmake
@@ -68,9 +68,9 @@ music.
 %setup -qn %{name}-%{version}
 
 # Remove most 3rdparty libraries
-mv 3rdparty/{gmock,qocoa,qsqlite,sha2,libmygpo-qt,vreen}/ .
+mv 3rdparty/{gmock,qocoa,qsqlite,sha2,libmygpo-qt}/ .
 rm -fr 3rdparty/*
-mv {gmock,qocoa,qsqlite,sha2,libmygpo-qt,vreen}/ 3rdparty/
+mv {gmock,qocoa,qsqlite,sha2,libmygpo-qt}/ 3rdparty/
 
 # Can't run all the unit tests
 #   songloader requires internet connection
